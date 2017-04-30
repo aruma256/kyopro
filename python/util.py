@@ -6,3 +6,11 @@ def combination(n, r):
         c //= i
     return c
 
+
+def factorial_mod(x, m):
+    a = 1
+    for i in range(2, x + 1):
+        a *= i
+        a %= m
+    return a
+
