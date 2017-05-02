@@ -14,3 +14,18 @@ def factorial_mod(x, m):
         a %= m
     return a
 
+
+class UnionFind():
+    def __init__(self, N):
+        self.root = [None] * N
+    def get_root(self, a):
+        r = self.root[a]
+        if r is None:
+            return a
+        else:
+            r = self.get_root(r)
+            self.root[a] = r
+            return r
+    def connect(self, a, b):
+        self.root[self.get_root(a)] = self.get_root(b)
+
