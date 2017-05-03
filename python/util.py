@@ -32,7 +32,7 @@ class UnionFind():
     def count_union(self):
         t = 0
         for i in range(self.N):
-            if i == self.get_root(i):
+            if i == self.root[i]:
                 t += 1
         return t
 
