@@ -1,10 +1,10 @@
 services:
-  atpy:
-    image: python:3.8.2-slim
+  python:
+    build: docker/atpy/
     volumes:
       - ./AtCoder:/AtCoder:ro
     entrypoint: python
-  atrb:
+  ruby:
     image: ruby:2.7.1-slim
     volumes:
       - ./AtCoder:/AtCoder:ro
