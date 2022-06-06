@@ -1,10 +1,10 @@
+import sys
+
 import numpy as np
 from numba import njit
 
-N, M, K = map(int, input().split())
-
-@njit
-def solve():
+@njit(cache=True)
+def solve(N, M, K):
     dp = np.ones(M, dtype=np.int64)
     ndp = np.empty_like(dp)
 
@@ -22,9 +22,13 @@ def solve():
     return ans
 
 def main():
+    N, M, K = map(int, input().split())
     if K == 0:
         print(pow(M, N, 998244353))
     else:
-        print(solve())
+        print(solve(N, M, K))
 
-main()
+if sys.argv[-1] == 'ONLINE_JUDGE':
+    solve(100, 1000, 500)
+else:
+    main()
