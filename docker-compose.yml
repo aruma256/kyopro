@@ -1,6 +1,7 @@
 services:
   python:
-    build: docker/atpy/
+    build:
+      dockerfile: python.Dockerfile
     volumes:
       - ./AtCoder:/AtCoder:ro
     entrypoint: python
