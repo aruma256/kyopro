@@ -5,6 +5,11 @@ services:
     volumes:
       - ./AtCoder:/AtCoder:ro
     entrypoint: python
+  pypy:
+    image: pypy:3.6-7.3.0-slim
+    volumes:
+      - ./AtCoder:/AtCoder:ro
+    entrypoint: pypy3
   ruby:
     image: ruby:2.7.1-slim
     volumes:
