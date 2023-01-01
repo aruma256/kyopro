@@ -15,3 +15,8 @@ services:
     volumes:
       - ./src:/src:ro
     entrypoint: ruby
+  rust:
+    image: rust:1.42.0-slim
+    volumes:
+      - ./src:/src:ro
+    entrypoint: /src/run_rust.sh
