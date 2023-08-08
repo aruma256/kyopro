@@ -15,24 +15,19 @@ def main():
     N, M = mis()
     A = lmis()
     B = lmis()
-    event_map = {}
+    events = []
     for a in A:
-        if a not in event_map:
-            event_map[a] = [0, 0]
-        event_map[a][0] += 1
+        events.append((a, 1, 0))
     for b in B:
-        if (b+1) not in event_map:
-            event_map[b+1] = [0, 0]
-        event_map[b+1][1] += 1
-    events = [(price, diff) for price, diff in event_map.items()]
-    events.sort(reverse=True)
+        events.append((b+1, 0, -1))
+    events.sort()
     #
     seller = 0
     buyer = M
-    while events:
-        price, (seller_diff, buyer_diff) = events.pop()
+    for event in events:
+        price, seller_diff, buyer_diff = event
         seller += seller_diff
-        buyer -= buyer_diff
+        buyer += buyer_diff
         if seller >= buyer:
             print(price)
             return
