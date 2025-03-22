@@ -1,3 +1,5 @@
+# tags: dijkstra
+
 import heapq
 
 INF = 10**18

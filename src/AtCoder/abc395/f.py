@@ -1,3 +1,5 @@
+# tags: binary search
+
 def main():
     N, X = map(int, input().split())
     us = []

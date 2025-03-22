@@ -1,3 +1,5 @@
+# tags: query
+
 N, Q = gets.chomp.split(" ").map(&:to_i)
 
 def main
